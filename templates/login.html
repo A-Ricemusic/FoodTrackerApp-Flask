@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1> Please log in </h1>
+<form method="POST">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Guest login: Guest12345@gmail.com </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password">
+    <div id="emailHelp" class="form-text">Password: Guest123 </div>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">login</button>
+</form>
+<h5> click the button below to make an account</h5>
+<a type="button" class="btn btn-secondary" href="/signup">make account</a>
+{% endblock %}

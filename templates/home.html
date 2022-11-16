@@ -1,0 +1,28 @@
+
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+  <h1 align="center">Foods eaten recently</h1>
+  <ul class="list-group list-group-flush" id="foods">
+    {% for food in user.foods %}
+    <li class="list-group-item">
+      <h5>{{ food.food_name }}</h5>
+      <p> {{ food.description }}</p>
+      <button type="button" class="close" onClick="deleteFood({{ food.id }})">
+        <span aria-hidden="true">&times;</span>
+        Delete Food Item
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+  <h3> Add Food Item Here </h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label for="foodName" class="form-label">Food</label>
+      <input type="text" class="form-control" name="foodName" id="foodName">
+      <div class="form-group">
+        <label for="foodDescription">Food Description</label>
+        <textarea class="form-control" name="foodDescription" id="foodDescription" rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Add Food</button>
+  </form>
+  {% endblock %}
