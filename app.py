@@ -1,4 +1,4 @@
-# run pip install flask flask-sqlalchemy flask-login werkzeug
+
 
 from flask import Flask
 from flask_login import LoginManager
